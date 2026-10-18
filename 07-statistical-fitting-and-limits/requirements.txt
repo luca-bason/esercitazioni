@@ -1,0 +1,4 @@
+# Import presenti negli script originali, ma non utilizzati nell'analisi.
+numpy
+iminuit
+# CERN ROOT / PyROOT va installato e configurato separatamente.

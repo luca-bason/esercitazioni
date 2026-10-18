@@ -1,0 +1,21 @@
+# Compilazioni C/C++
+*.o
+*.obj
+*.exe
+/Main
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# File temporanei/editor
+*~
+\#*#
+.DS_Store
+.vscode/
+.idea/
+
+# Output ROOT (se generati)
+*.root
