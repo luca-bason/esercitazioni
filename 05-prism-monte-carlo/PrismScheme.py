@@ -21,7 +21,7 @@ def GetAB(th0,th1,th2):
     n2    = (sin((del2+alpha)/2))/(sin(alpha/2))
     lamq1 = lambda1**2
     lamq2 = lambda2**2
-    B     = (n2-n1)*lamq1*lamq2/(lamq1+lamq2)
+    B     = (n2-n1)*lamq1*lamq2/(lamq1-lamq2)
     A     = n1-(B/lamq1)
     return A,B
 
@@ -88,6 +88,10 @@ CF1  = AB.GetCorrelationFactor()
 print("A = ",A_1,"+-",eA_1)
 print("B = ",B_1,"+-",eB_1)
 print("Fattore di correlazione: ",CF1)
+
+A.Reset()
+B.Reset()
+AB.Reset()
 
 for i in range (0,10000):
     TH0 = rnd.Uniform(th0-eth,th0+eth)
