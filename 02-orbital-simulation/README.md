@@ -5,5 +5,3 @@ Esercizio in **C++11 e CERN ROOT** per simulare il moto di più corpi soggetti a
 **File principali:** `Main.cpp`, `OdeSolver.*`, `PuntoMateriale.*`, `Particella.h`, `Vettore.*` e `fileInput` (condizioni iniziali).
 
 **Esecuzione:** installare CERN ROOT con `root-config` disponibile, quindi eseguire `make && ./Main` dalla cartella del progetto.
-
-**Nota:** controllare la ponderazione di RK4, l'aggiornamento in Verlet e la definizione del momento angolare prima di usare i risultati come confronto quantitativo.

@@ -135,8 +135,8 @@ void OdeSolver::Cinematica(){
     }
 
     for (unsigned int i=0; i<m_p.size(); i++){
-      m_p[i].R(m_p[i].R()+k1[i]/6+k2[i]/3+k3[i]/3+k4[i]/4);
-      m_p[i].V(m_p[i].V()+w1[i]/6+w2[i]/3+w3[i]/3+w4[i]/4);
+      m_p[i].R(m_p[i].R()+k1[i]/6+k2[i]/3+k3[i]/3+k4[i]/6);
+      m_p[i].V(m_p[i].V()+w1[i]/6+w2[i]/3+w3[i]/3+w4[i]/6);
     }
     
   }
@@ -158,7 +158,7 @@ void OdeSolver::Cinematica(){
 
     for (unsigned int i=0; i<m_p.size(); i++){
       m_p[i].R(p_successivo[i].R());
-      m_p[i].V(m_p[i].V() + (0.5*w1[i]) + (0.5*m_h*m_eqDiff(i, m_t+(m_h*0.5), p_successivo)));
+      m_p[i].V(m_p[i].V() + (0.5*w1[i]) + (0.5*m_h*m_eqDiff(i, m_t+m_h, p_successivo)));
     }
   }
 
