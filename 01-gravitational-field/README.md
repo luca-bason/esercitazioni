@@ -4,6 +4,6 @@ Esercizio universitario in **C++11** sulla programmazione a oggetti: classi per 
 
 **File principali:** `Main.cpp`, `PuntoMateriale.*`, `Particella.h`, `Vettore.*`, `Elettrone.h`.
 
-**Compilazione (dopo la correzione indicata sotto):** `g++ -std=c++11 Main.cpp PuntoMateriale.cpp Vettore.cpp -o Main && ./Main`
+**Compilazione:** `g++ -std=c++11 Main.cpp PuntoMateriale.cpp Vettore.cpp -o Main && ./Main`
 
-**Nota:** nella versione originale manca un costruttore usato da `Main.cpp`; va aggiunto o va passato esplicitamente il vettore velocità. Il `Makefile` richiede ROOT anche se questo esercizio non lo utilizza.
+**Nota:** Il `Makefile` richiede ROOT anche se questo esercizio non lo utilizza.
