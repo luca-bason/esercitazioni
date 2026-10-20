@@ -13,9 +13,10 @@ function HeatSchemeAsym
     temp = zeros(N,1);
     while t<tend
        % Metodo esplicito
+       T_old = T;
+       T(1)     = T_old(1) + 2*eta*(T_old(2)-T_old(1));
+       T(2:N-1) = T_old(2:N-1) + eta*(T_old(3:N)+T_old(1:N-2)-2*T_old(2:N-1));
        T(N)     = T0;
-       T(1)     = T(1) + 2*eta*(T(2)-T(1));
-       T(2:N-1) = T(2:N-1) + eta*(T(3:N)+T(1:N-2)-2*T(2:N-1));
        plot(x,T);
        % Salvataggio t e T (per un punto della sbarra) e loro disegno
        time(end+1) = t;
