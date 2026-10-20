@@ -22,8 +22,8 @@ for line in open("out2.dat"):
 
 minuit = TMinuit(2)
 minuit.SetFCN(fcn);
-minuit.DefineParameter(0,'par0',1e4,0.01,0.,0.)
-minuit.DefineParameter(1,'par1',0,0.01,0.,0.)
+minuit.DefineParameter(0, 'a', 1e-12, 1e-13, 0., 0.)
+minuit.DefineParameter(1, 'b', 11000., 100., 0., 0.)
 minuit.Command("MIGRAD")
 a  = c_double(0.0); b  = c_double(0.0)
 ea = c_double(0.0); eb = c_double(0.0)

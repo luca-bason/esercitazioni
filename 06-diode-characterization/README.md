@@ -7,5 +7,3 @@ Esercizio in **Python** per acquisire automaticamente misure di corrente e tensi
 **Dipendenze:** `numpy`, `pyserial`, `pyvisa` (`pip install -r requirements.txt`) e CERN ROOT con PyROOT per il fit.
 
 **Esecuzione:** `python fitlin.py` sui dati inclusi; `python test.py` **solo con strumenti compatibili collegati e configurati**.
-
-**Nota:** porta seriale, identificativo dell'alimentatore e parametri iniziali del fit sono specifici dell'esperimento e vanno adattati.
