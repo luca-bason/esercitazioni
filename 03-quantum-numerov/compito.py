@@ -33,12 +33,18 @@ def evalDerivative(eps):
     return diff
 
 def findE(emin,emax,tol):
-    while (emax-emin>tol):
-        emed = (emin+emax)/2
-        if evalDerivative(emin)*evalDerivative(emed)<0:
+    fmin = evalDerivative(emin)
+    fmax = evalDerivative(emax)
+    if fmin * fmax > 0:
+        raise ValueError("Intervallo senza cambio di segno")
+    while emax - emin > tol:
+        emed = (emin + emax) / 2
+        fmed = evalDerivative(emed)
+        if fmin * fmed <= 0:
             emax = emed
         else:
             emin = emed
+            fmin = fmed
     return (emin+emax)/2;
 
 #Main code
@@ -64,7 +70,7 @@ for i in range(0,ntot-1):
 
 #Trovo il numero di zeri di psi a energia fissata eps
 
-eps=5
+eps=4.5
 e=findE(eps-0.0001,eps+0.0001,0.00005)
 
 for i in range(nmatch+1,n,1):
