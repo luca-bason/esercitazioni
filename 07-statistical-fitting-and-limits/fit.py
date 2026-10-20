@@ -9,7 +9,7 @@ gStyle.SetOptStat(0)
 h      = TH1D("h","",40,0,40)
 
 #implementare fitfun
-f = TF1("f","[0]*[1]*([2]*TMath::Gaus(x,[3],[4])+(1-[2])*(exp(-x/[5])/[5]))",0,50)
+f = TF1("f","[0]*[1]*([2]*TMath::Gaus(x,[3],[4],true)+(1-[2])*(exp(-x/[5])/[5]))",0,50)
 
 for line in open("dati_highstat.dat"):
     mass = float(line)
@@ -35,8 +35,8 @@ f.SetParameter(5,mu)
 
 h.Draw()
 h.Fit("f","0MULTI")
-f.SetParameter(0,h.GetEntries())
-f.SetParameter(0,h.GetBinWidth(1))
+f.SetParameter(0, h.GetBinWidth(1))
+f.SetParameter(1, h.Integral())
 f.Draw("SAME")
 
 
@@ -77,8 +77,8 @@ f.SetParameter(5,mu)
 
 t.UnbinnedFit("f","t")
 h.Draw()
-f.SetParameter(0,h.GetEntries())
-f.SetParameter(0,h.GetBinWidth(1))
+f.SetParameter(0, h.GetBinWidth(1))
+f.SetParameter(1, h.Integral())
 f.Draw("SAME")
 
 gApplication.Run(True)

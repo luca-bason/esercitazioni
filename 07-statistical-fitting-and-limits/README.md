@@ -18,5 +18,3 @@ python fit.py
 python limit.py
 python limit2.py
 ```
-
-> Codice didattico conservato nella versione originale: il fit e il calcolo del limite al 95% CL richiedono correzioni prima di considerare attendibili i risultati. Vedere `../CHECKLIST.md`.
